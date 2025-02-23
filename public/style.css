@@ -245,57 +245,137 @@ article,
 }
 
 header {
-  --logomark-height: 3em;
-  --logomark-padding: 0 1em;
+  background-color: #215A59;
+  padding: 20px 0;
+}
+header .container {
   display: grid;
-  min-height: 40vh;
-  place-items: center;
-  padding: 10vh 2rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233a00ff' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d42257' fill-opacity='0.4'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-position: 0 -38px, 17px -40px;
-  color: var(--color-primary);
+  grid-template-columns: 1fr 1fr 1.5fr;
+  grid-template-rows: auto auto;
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header .container::before {
+  content: "";
+  grid-column: 1/2;
+  grid-row: 1/2;
+  background-image: url("./images/cairn3.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 266px;
+  align-self: center;
+  border-radius: 15px;
+  animation: fadeIn 1.5s ease-in-out forwards;
+  box-shadow: 0 0 20px rgba(33, 90, 89, 0.8);
+}
+header .container h1 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  color: #E5EDE8;
+  align-self: center;
+  margin: 0;
+  font-size: 6rem;
+}
+header .container h2 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  color: #B1CDBD;
+  font-size: 1.25rem;
+  align-self: center;
+  margin-top: 115px;
+}
+header .container p {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  color: #B1CDBD;
+  font-size: 1rem;
+  align-self: center;
   text-align: center;
 }
-header h1 {
-  display: inline-grid;
-  min-height: var(--logomark-height);
-  padding: var(--logomark-padding);
-  border: 0.16em solid var(--color-primary);
-  box-shadow: 0.12em 0.12em var(--color-secondary);
-  place-content: center;
-}
-header h2 {
-  max-width: 30ch;
-}
-
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-nav ul a {
-  display: inline-grid;
-  padding: 0.5rem;
-  color: var(--color-secondary);
-  font-size: 1.25rem;
+header .container p a {
+  color: #E5EDE8;
+  text-decoration: underline;
+  transition: color 0.3s ease;
   text-decoration: none;
 }
-nav ul a::before {
-  width: 100%;
-  height: 0.33em;
-  background-color: var(--color-secondary);
-  opacity: 0.15;
-  content: "";
+header .container p a:hover {
+  color: #75908B;
 }
-nav ul a:hover::before, nav ul a:focus::before {
-  opacity: 1;
+header .container .link-github {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  color: #75908B;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
 }
-nav ul li {
-  margin: 0.25rem;
+header .container .link-github svg {
+  fill: #75908B;
+  width: 20px;
+  height: 20px;
+}
+header .container .link-github:hover {
+  color: #E5EDE8;
+}
+header .container .link-github:hover svg {
+  fill: #E5EDE8;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+nav {
+  background-color: #B1CDBD;
+  padding-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+nav li {
+  flex: 1;
+  margin: 0 5px;
+  position: relative;
+  top: 0;
+}
+nav a {
+  display: block;
+  text-align: center;
+  padding: 10px 10px 15px 10px;
+  background-color: rgba(229, 237, 232, 0.85);
+  text-decoration: none;
+  color: #215A59;
+  border: 1px solid rgba(117, 144, 139, 0.7);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+nav a:hover {
+  background-color: rgba(117, 144, 139, 0.95);
+  color: #E5EDE8;
+  transform: translateY(2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 #about section:nth-child(2) {
