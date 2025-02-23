@@ -265,6 +265,7 @@ header .container::before {
   background-repeat: no-repeat;
   height: 200px;
   width: 266px;
+  margin: 10px;
   align-self: center;
   border-radius: 15px;
   animation: fadeIn 1.5s ease-in-out forwards;
@@ -309,6 +310,7 @@ header .container .link-github {
   color: #75908B;
   text-decoration: none;
   display: flex;
+  margin-right: 10px;
   align-items: center;
   justify-content: flex-end;
   gap: 5px;
