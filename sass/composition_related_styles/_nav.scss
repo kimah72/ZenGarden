@@ -40,13 +40,5 @@ nav {
       transform: translateY(2px);
       box-shadow: 0 4px 6px #2f2f2f;
     }
-
-    &.active {
-      text-decoration: underline; /* Adds the underline */
-      text-decoration-thickness: 2px; /* Makes it thicker for visibility */
-      text-decoration-color: $color-primary; /* Matches your teal theme */
-      background-color: rgba($color-primary, 0.9); /* Optional: stronger bg */
-      color: $color-secondary; /* Keeps text readable */
-    }
   }
 }
