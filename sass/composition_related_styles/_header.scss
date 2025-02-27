@@ -1,5 +1,5 @@
 header {
-  background-color: $color-primary;
+  background-color: $color-background;
   padding: 20px 0;
 
   .container {
@@ -30,7 +30,7 @@ header {
     h1 {
       grid-column: 2 / 3;
       grid-row: 1 / 2;
-      color: $color-secondary;
+      color: $color-contrast;
       align-self: center;
       margin: 0;
       font-size: map-get($font-sizes, h1);
@@ -39,7 +39,7 @@ header {
     h2 {
       grid-column: 3 / 4;
       grid-row: 1 / 2;
-      color: $color-background;
+      color: $color-contrast;
       font-size: 1.25rem;
       align-self: center;
       margin-top: 115px;
@@ -48,14 +48,13 @@ header {
     p {
       grid-column: 3 / 4;
       grid-row: 1 / 2;
-      color: $color-background;
+      color: $color-contrast;
       font-size: 1rem;
       align-self: center;
       text-align: center;
 
       a {
-        color: $color-secondary;
-        text-decoration: underline;
+        color: $color-contrast;
         transition: color 0.3s ease;
         text-decoration: none;
 
@@ -68,7 +67,8 @@ header {
     .link-github {
       grid-column: 3 / 4;
       grid-row: 2 / 3;
-      color: $color-primary-alt;
+      color: $color-primary;
+      background-color: $color-background;
       text-decoration: none;
       display: flex;
       margin-right: 10px;

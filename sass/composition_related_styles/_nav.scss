@@ -1,9 +1,8 @@
 nav {
   background-color: $color-background;
-  padding-bottom: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  border-top: 2px solid $color-primary;
+  padding-bottom: 15px;
+  position: static;
 
   ul {
     list-style: none;
@@ -25,7 +24,7 @@ nav {
   a {
     display: block;
     text-align: center;
-    padding: 10px 10px 15px 10px;
+    padding: 10px;
     background-color: rgba($color-secondary, 0.85);
     text-decoration: none;
     color: $color-primary;
@@ -39,7 +38,15 @@ nav {
       background-color: rgba($color-primary-alt, 0.95);
       color: $color-secondary;
       transform: translateY(2px);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 4px 6px #2f2f2f;
+    }
+
+    &.active {
+      text-decoration: underline; /* Adds the underline */
+      text-decoration-thickness: 2px; /* Makes it thicker for visibility */
+      text-decoration-color: $color-primary; /* Matches your teal theme */
+      background-color: rgba($color-primary, 0.9); /* Optional: stronger bg */
+      color: $color-secondary; /* Keeps text readable */
     }
   }
 }
