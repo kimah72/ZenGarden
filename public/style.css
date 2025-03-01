@@ -2,7 +2,7 @@
 :root {
   --color-primary: #1A4645;
   --color-primary-alt: #75908B;
-  --color-secondary: #ECF2ED;
+  --color-secondary: #E5EDE8;
   --color-background: #B1CDBD;
   --color-text: #1a2929;
   --color-light: #fff;
@@ -224,7 +224,7 @@ header .container .link-github {
   grid-column: 3/4;
   grid-row: 2/3;
   color: #1A4645;
-  background: linear-gradient(135deg, #B1CDBD 40%, #ECF2ED 100%);
+  background: linear-gradient(135deg, #B1CDBD 40%, #E5EDE8 100%);
   box-shadow: 3px 3px 10px rgba(117, 144, 139, 0.3);
   transition: box-shadow 0.3s ease;
   position: relative;
@@ -321,7 +321,7 @@ nav a {
   display: block;
   text-align: center;
   padding: 10px;
-  background-color: rgba(236, 242, 237, 0.85);
+  background-color: rgba(229, 237, 232, 0.85);
   text-decoration: none;
   color: #1A4645;
   border: 1px solid rgba(117, 144, 139, 0.7);
@@ -332,7 +332,7 @@ nav a {
 }
 nav a:hover {
   background-color: rgba(117, 144, 139, 0.95);
-  color: #ECF2ED;
+  color: #E5EDE8;
   transform: translateY(2px);
   box-shadow: 0 4px 6px #2f2f2f;
 }
