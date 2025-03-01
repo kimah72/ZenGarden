@@ -41,7 +41,21 @@
   }
 }
 
-// Add container constraints for Style Stage's .container
+// Main content area styles
+.main {
+  padding: var(--spacing-xl) 0;
+
+  &__section {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  &__article {
+    display: grid;
+    gap: var(--spacing-lg);
+  }
+}
+
+// Add container constraints for Style Stage's .container and nav
 .container {
   @include container-constraints;
 }
