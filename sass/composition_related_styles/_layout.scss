@@ -1,0 +1,61 @@
+.layout {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto auto 1fr auto;
+
+  &__container {
+    width: 100%;
+    max-width: var(--container-max-width, 80ch);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--grid-gap, var(--spacing-md));
+
+    &--2col {
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &--3col {
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  &__flex {
+    display: flex;
+    gap: var(--flex-gap, var(--spacing-md));
+
+    &--column {
+      flex-direction: column;
+    }
+
+    &--wrap {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+// Main content area styles
+.main {
+  padding: var(--spacing-xl) 0;
+
+  &__section {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  &__article {
+    display: grid;
+    gap: var(--spacing-lg);
+  }
+}
+
+// Add container constraints for Style Stage's .container and nav
+.container {
+  @include container-constraints;
+}

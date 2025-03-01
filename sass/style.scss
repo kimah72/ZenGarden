@@ -1,21 +1,27 @@
+// This how the css gets compiled.
+
 @import "utility_styles/fonts";
 
-// You can modify the theme directly, or override some of the variables
-// Overrides just need placed prior to the theme import
-// For example:
-// $color-primary: #3a0;
+// These are all the global styles
 @import "global_css/theme";
 @import "global_css/reset";
+@import "global_css/mixins";
+
+// These are all the different sections of the main page
 @import "block_related_styles/logomark";
-@import "utility_styles/typography";
-@import "composition_related_styles/layout";
+@import "block_related_styles/about";
+@import "block_related_styles/contribute";
+@import "block_related_styles/guidelines";
+@import "block_related_styles/profile";
+@import "block_related_styles/styles";
+
+// These are all the different sections
 @import "composition_related_styles/header";
 @import "composition_related_styles/nav";
-@import "block_related_styles/about";
-@import "block_related_styles/guidelines";
-@import "block_related_styles/contribute";
-@import "utility_styles/files";
-@import "block_related_styles/styles";
-@import "block_related_styles/profile";
+@import "composition_related_styles/layout";
 @import "composition_related_styles/footer";
+
+// These are all the utility styles
+@import "utility_styles/typography";
+@import "utility_styles/files";
 @import "utility_styles/links";
