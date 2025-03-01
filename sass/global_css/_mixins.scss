@@ -41,7 +41,7 @@
 // Reverted container-constraints mixin (no padding)
 @mixin container-constraints {
   width: 100%;
-  max-width: var(--container-max-width, 100ch);
+  max-width: 90%;
   margin: 0 auto;
 }
 
