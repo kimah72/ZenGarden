@@ -1,4 +1,3 @@
-// composition_related_styles/_layout.scss
 .layout {
   display: grid;
   min-height: 100vh;
@@ -42,16 +41,7 @@
   }
 }
 
-// Main content area styles
-.main {
-  padding: var(--spacing-xl) 0;
-
-  &__section {
-    margin-bottom: var(--spacing-xl);
-  }
-
-  &__article {
-    display: grid;
-    gap: var(--spacing-lg);
-  }
+// Add container constraints for Style Stage's .container
+.container {
+  @include container-constraints;
 }
