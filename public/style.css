@@ -66,15 +66,6 @@ select {
   font: inherit;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
 h1,
 h2,
 h3,
@@ -119,17 +110,6 @@ p {
   color: var(--color-primary);
 }
 
-article .container > ul:not(.features) > li + li,
-article .container > ol > li + li {
-  margin-top: 1rem;
-}
-article .container * + h2 {
-  margin-top: 4rem;
-}
-article .container * + h3 {
-  margin-top: 2rem;
-}
-
 strong {
   font-weight: var(--font-weight-strong);
 }
@@ -137,12 +117,6 @@ strong {
 a {
   color: var(--color-anchor);
   text-decoration: none;
-}
-
-#guidelines p:nth-of-type(1),
-#contribute p:nth-of-type(1) {
-  font-size: var(--font-size-h4);
-  font-weight: var(--font-weight-strong);
 }
 
 header {
@@ -283,17 +257,24 @@ nav a:hover {
 /* Don't change/ done by Julie */
 #about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 0;
 }
 @media (max-width: 768px) {
   #about {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    gap: 0;
   }
 }
 #about .container {
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
   justify-content: space-around;
+  align-items: center;
   border-radius: 15px;
   padding: 30px;
   margin: 20px 10px 20px 20px;
@@ -341,8 +322,51 @@ nav a:hover {
   background-color: var(--color-primary);
 }
 
+/*Features .features styling */
 /* Styling for the guidelines section */
+/* Don't change/ done by Julie */
+#guidelines {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#guidelines .container {
+  margin: 30px;
+}
+#guidelines .container h2 {
+  background-color: var(--color-background);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
+#guidelines .container p {
+  margin: 10px 60px;
+  padding: 10px;
+}
+#guidelines .container p a {
+  background-color: var(--color-secondary);
+  padding: 5px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  display: inline-block;
+  box-shadow: 5px 5px 5px var(--color-primary-alt);
+}
+#guidelines .container p a:hover {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+#guidelines .container p p:nth-child(2) {
+  font-weight: bold;
+  font-size: clamp(1.5rem, 1.8rem, 2rem);
+}
+
 /* Don't change/ Done by Julie */
+/*Features .features styling */
 #about .container:nth-child(2) {
   background: none;
   border: none;
@@ -350,8 +374,10 @@ nav a:hover {
 }
 #about .container:nth-child(2) ul {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   list-style: none;
 }
 #about .container:nth-child(2) ul li {

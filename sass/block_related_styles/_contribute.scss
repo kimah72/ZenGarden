@@ -1,13 +1,12 @@
 /* Don't change/ Done by Julie */ 
+@import "styles";
 #about .container:nth-child(2) {
   background: none;
   border: none;
   box-shadow: none;
 
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    @include flex-layout(row, wrap, space-around); //mixin from #about
     list-style: none;
 
     li {

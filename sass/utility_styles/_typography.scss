@@ -42,24 +42,6 @@ p {
   color: var(--color-primary);
 }
 
-article .container {
-  > ul:not(.features),
-  > ol {
-    > li + li {
-      margin-top: 1rem;
-    }
-  }
-
-  * {
-    + h2 {
-      margin-top: 4rem;
-    }
-
-    + h3 {
-      margin-top: 2rem;
-    }
-  }
-}
 
 strong {
   font-weight: var(--font-weight-strong);
@@ -71,10 +53,4 @@ a {
 }
 
 
-#guidelines,
-#contribute {
-  p:nth-of-type(1) {
-    font-size: var(--font-size-h4);
-    font-weight: var(--font-weight-strong);
-  }
-}
+

@@ -1,1 +1,49 @@
 /* Styling for the guidelines section */
+/* Don't change/ done by Julie */ 
+@use 'styles';
+
+#guidelines {
+    @include flex-layout(column, nowrap);
+    text-align: center;
+
+    .container {
+        margin: 30px;
+
+        h2 {
+            background-color: var(--color-background);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        p {
+            margin: 10px 60px;
+            padding: 10px;
+
+            a {
+                background-color: var(--color-secondary);
+                    padding: 5px 15px;
+                    margin: 0 5px;
+                    border-radius: 5px;
+                    white-space: nowrap;
+                    overflow-wrap: normal;
+                    display: inline-block;
+                    box-shadow: 5px 5px 5px var(--color-primary-alt);
+            
+    
+                    &:hover {
+                    color: var(--color-secondary);
+                    background-color: var(--color-primary);
+                    }
+        }
+
+        p:nth-child(2) {
+            font-weight: bold;
+            font-size: clamp(1.5rem, 1.8rem, 2rem);
+        }
+
+        
+            
+        }
+    }
+}
