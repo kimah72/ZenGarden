@@ -255,6 +255,10 @@ nav a:hover {
 }
 
 /* Don't change/ done by Julie */
+#main {
+  margin-top: 20px;
+}
+
 #about {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -304,7 +308,8 @@ nav a:hover {
   box-shadow: 5px 5px 5px var(--color-primary);
 }
 #about .container blockquote p {
-  color: var(--color-secondary);
+  color: var(--color-light);
+  filter: brightness(100%);
   padding: 10px;
   text-align: center;
 }
@@ -331,15 +336,18 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin-top: 20px;
 }
-#guidelines .container {
-  margin: 30px;
+@media (max-width: 768px) {
+  #guidelines {
+    margin-top: 0;
+  }
 }
 #guidelines .container h2 {
   background-color: var(--color-background);
   padding: 20px;
   border-radius: 10px;
-  margin: 10px 20px 50px 20px;
+  margin: 10px 20px 30px 20px;
   box-shadow: 5px 5px 5px var(--color-primary);
 }
 #guidelines .container h3 {
@@ -366,6 +374,7 @@ nav a:hover {
 #guidelines .container p:nth-child(2) {
   font-weight: bold;
   font-size: clamp(1.2rem, 1.5rem, 1.8rem);
+  margin-bottom: 40px;
 }
 
 .link-guidelines {

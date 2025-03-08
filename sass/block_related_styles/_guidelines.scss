@@ -3,15 +3,19 @@
 #guidelines {
     @include flex-layout(column, nowrap);
     text-align: center;
+    margin-top: 20px;
+
+    @media (max-width: 768px) { 
+         margin-top: 0;
+      }
 
     .container {
-        margin: 30px;
 
         h2 {
             background-color: var(--color-background);
             padding: 20px;
             border-radius: 10px;
-            margin: 10px 20px 50px 20px;
+            margin: 10px 20px 30px 20px;
             box-shadow: 5px 5px 5px var(--color-primary);
         }
 
@@ -44,6 +48,7 @@
         p:nth-child(2) {
             font-weight: bold;
             font-size: clamp(1.2rem, 1.5rem, 1.8rem);
+            margin-bottom: 40px;
         }        
     } 
 }
