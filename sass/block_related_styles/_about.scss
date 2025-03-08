@@ -15,12 +15,16 @@
   justify-content: $justify;
   align-items: $align;
 }
+#main {
+  margin-top: 20px;
+}
 
 #about {
   @include grid-layout(2);
 //Smaller screen
   @media (max-width: 768px) { 
     @include grid-layout(1); 
+    
   }
 
   .container {
@@ -58,7 +62,8 @@
       box-shadow: 5px 5px 5px var(--color-primary);
 
         p {
-          color: var(--color-secondary);
+          color: var(--color-light);
+          filter: brightness(100%);
           padding: 10px;
           text-align: center;
 
