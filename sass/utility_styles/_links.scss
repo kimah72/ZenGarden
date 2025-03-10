@@ -19,14 +19,14 @@
   }
 }
 
-[class^="link"]:not(.link-codepen) {
+[class^="link"]:not(.link-codepen, .link-guidelines) {
   min-height: 3em;
   background-color: var(--color-primary);
   color: #fff;
   box-shadow: 0.18em 0.18em var(--color-secondary);
 }
 
-[class^="link"]:not(.link-codepen),
+[class^="link"]:not(.link-codepen, .link-guidelines),
 .profile .container > a {
   display: inline-flex;
   align-items: center;
