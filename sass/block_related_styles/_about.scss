@@ -1,16 +1,35 @@
 /* Don't change/ done by Julie */ 
-#about {
+// mixin for grid
+@mixin grid-layout($columns, $rows: auto, $gap: 0) {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
+//mixin for flex
+@mixin flex-layout($direction: row, $wrap: nowrap, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+#main {
+  margin-top: 20px;
+}
+
+#about {
+  @include grid-layout(2);
 //Smaller screen
   @media (max-width: 768px) { 
-    grid-template-columns: 1fr; 
+    @include grid-layout(1); 
+    
   }
 
   .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    @include flex-layout(column, nowrap, space-around, center);
     border-radius: 15px;
     padding: 30px;
     margin: 20px 10px 20px 20px;
@@ -44,7 +63,8 @@
       box-shadow: 5px 5px 5px var(--color-primary);
 
         p {
-          color: var(--color-secondary);
+          color: var(--color-light);
+          filter: brightness(100%);
           padding: 10px;
           text-align: center;
 
