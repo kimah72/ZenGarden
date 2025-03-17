@@ -20,6 +20,29 @@
   margin-top: 20px;
 }
 
+// This section was in the contribute section
+// The code embedded into the container below didn't work. I commented it out.
+#about .container:nth-child(2) {
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  ul {
+    @include flex-layout(row, wrap, space-around); //mixin from #about
+    list-style: none;
+
+    li {
+      background-color: var(--color-background);
+      padding: 10px;
+      margin: 5px;
+      border-radius: 8px;
+      box-shadow: 5px 5px 5px 0px var(--color-primary-alt);
+    }
+  }
+
+}
+// ends here
+
 #about {
   @include grid-layout(2);
 //Smaller screen
@@ -53,6 +76,26 @@
         text-decoration: none;
       }
     }
+
+//     #about .container:nth-child(2) {
+//   background: none;
+//   border: none;
+//   box-shadow: none;
+
+//   ul {
+//     @include flex-layout(row, wrap, space-around); //mixin from #about
+//     list-style: none;
+
+//     li {
+//       background-color: var(--color-background);
+//       padding: 10px;
+//       margin: 5px;
+//       border-radius: 8px;
+//       box-shadow: 5px 5px 5px 0px var(--color-primary-alt);
+//     }
+//   }
+
+// }
 
     blockquote {
       border: 2px solid var(--color-primary-alt);
