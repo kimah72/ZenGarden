@@ -36,6 +36,7 @@
     background-color: var(--color-secondary);
     border: 1px solid var(--color-secondary);
     box-shadow: 10px 10px 10px 0px var(--color-primary-alt);
+    max-width: 95%;
     
 
     h2 {
@@ -87,6 +88,26 @@
     }
   }
 
+
+}
+
+#about .container:nth-child(2) {
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  ul {
+    @include flex-layout(row, wrap, space-around); //mixin from #about
+    list-style: none;
+
+    li {
+      background-color: var(--color-background);
+      padding: 10px;
+      margin: 5px;
+      border-radius: 8px;
+      box-shadow: 5px 5px 5px 0px var(--color-primary-alt);
+    }
+  }
 
 }
 

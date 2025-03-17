@@ -1,22 +1,130 @@
-/* Don't change/ Done by Julie */ 
+/* Styling for the contribute section */
+/* Don't change/ done by Julie */ 
+#contribute {
+  @include grid-layout(2);
+  margin-top: 20px;
+  color: var(--color-primary);
 
-#about .container:nth-child(2) {
-  background: none;
-  border: none;
-  box-shadow: none;
+  @media (max-width: 768px) { 
+       margin-top: 0;
+       @include flex-layout(column);
 
-  ul {
-    @include flex-layout(row, wrap, space-around); //mixin from #about
-    list-style: none;
-
-    li {
-      background-color: var(--color-background);
-      padding: 10px;
-      margin: 5px;
-      border-radius: 8px;
-      box-shadow: 5px 5px 5px 0px var(--color-primary-alt);
     }
-  }
 
+  .container {
+    max-width: 95%;
+    display: grid;
+    
+    @media (max-width: 768px) {
+      @include flex-layout(column);
+      margin-top: 10px;
+    }
+    
+    &:first-child {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
+
+      h2 {
+          background-color: var(--color-background);
+          padding: 20px;
+          border-radius: 10px;
+          margin: 10px auto;
+          box-shadow: 5px 5px 5px var(--color-primary); 
+          width: 100%;
+          grid-column: 1 / -1;
+      }
+
+      h3 {
+        font-weight: bold;
+        text-align: center;
+        margin: 10px 0;
+      
+      }
+
+      p {
+          margin: 0 20px 90px;
+          width: 45%;
+          text-align: center;  
+          font-size: clamp(1.2em, 1.5em, 1.8em);  
+          
+          @media (max-width: 768px) {
+            width: 100%;
+            margin-top: 10px;
+          }
+
+          &:nth-child(2) {
+            font-weight: bold;
+            font-size: clamp(1.8em, 2em, 2.2em);
+            text-align: center;
+            align-self: flex-end;
+            padding: 40px;
+            align-content: flex-start;
+            margin-bottom: -10px;
+            margin-top: 30px;  
+            
+            @media (max-width: 768px) {
+              width: 100%;
+              padding: 10px;
+              align-self: center;
+              margin-top: 10px;
+            }
+        
+          }
+
+ 
+          a {
+              background-color: var(--color-background);
+              color: var(--color-primary);
+              padding: 5px 15px;
+              margin: 0 5px;
+              border-radius: 5px;
+              white-space: nowrap;
+              overflow-wrap: normal;
+              display: inline-block;
+              box-shadow: 2.5px 2.5px 2.5px var(--color-primary-alt);
+              white-space: nowrap;
+              overflow-wrap: normal;
+              display: inline-block;
+          
+  
+                  &:hover {
+                  color: var(--color-secondary);
+                  background-color: var(--color-primary);
+                  }
+              }
+          } 
+      &:nth-child(2)  {
+        padding: 30px;
+        margin: 20px;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        margin-top: 140px;
+        width: 90%;
+        background-color: var(--color-primary-alt);
+        border-radius: 15px;
+        box-shadow: 10px 10px 10px var(--color-primary);
+        color: var(--color-light);
+
+        a {
+          background-color: var(--color-secondary);
+          padding: 8px;
+          border-radius: 8px;
+          box-shadow: 3px 3px 3px var(--color-primary);
+          white-space: nowrap;
+          overflow-wrap: normal;
+          display: inline-block;
+
+          &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-light);
+            
+          }
+        }
+       
+      }   
+  } 
 }
+
+
 

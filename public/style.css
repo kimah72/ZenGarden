@@ -106,6 +106,7 @@ select {
   background-color: var(--color-secondary);
   border: 1px solid var(--color-secondary);
   box-shadow: 10px 10px 10px 0px var(--color-primary-alt);
+  max-width: 95%;
 }
 #about .container h2 {
   font-size: 60px;
@@ -148,7 +149,6 @@ select {
   background-color: var(--color-primary);
 }
 
-/* Don't change/ Done by Julie */
 #about .container:nth-child(2) {
   background: none;
   border: none;
@@ -168,6 +168,132 @@ select {
   margin: 5px;
   border-radius: 8px;
   box-shadow: 5px 5px 5px 0px var(--color-primary-alt);
+}
+
+/* Styling for the contribute section */
+/* Don't change/ done by Julie */
+#contribute {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 0;
+  margin-top: 20px;
+  color: var(--color-primary);
+}
+@media (max-width: 768px) {
+  #contribute {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#contribute .container {
+  max-width: 95%;
+  display: grid;
+}
+@media (max-width: 768px) {
+  #contribute .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+}
+#contribute .container:first-child {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+#contribute .container h2 {
+  background-color: var(--color-background);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px auto;
+  box-shadow: 5px 5px 5px var(--color-primary);
+  width: 100%;
+  grid-column: 1/-1;
+}
+#contribute .container h3 {
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+#contribute .container p {
+  margin: 0 20px 90px;
+  width: 45%;
+  text-align: center;
+  font-size: clamp(1.2em, 1.5em, 1.8em);
+}
+@media (max-width: 768px) {
+  #contribute .container p {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+#contribute .container p:nth-child(2) {
+  font-weight: bold;
+  font-size: clamp(1.8em, 2em, 2.2em);
+  text-align: center;
+  align-self: flex-end;
+  padding: 40px;
+  align-content: flex-start;
+  margin-bottom: -10px;
+  margin-top: 30px;
+}
+@media (max-width: 768px) {
+  #contribute .container p:nth-child(2) {
+    width: 100%;
+    padding: 10px;
+    align-self: center;
+    margin-top: 10px;
+  }
+}
+#contribute .container p a {
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  padding: 5px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  display: inline-block;
+  box-shadow: 2.5px 2.5px 2.5px var(--color-primary-alt);
+  white-space: nowrap;
+  overflow-wrap: normal;
+  display: inline-block;
+}
+#contribute .container p a:hover {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+#contribute .container:nth-child(2) {
+  padding: 30px;
+  margin: 20px;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  margin-top: 140px;
+  width: 90%;
+  background-color: var(--color-primary-alt);
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px var(--color-primary);
+  color: var(--color-light);
+}
+#contribute .container:nth-child(2) a {
+  background-color: var(--color-secondary);
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px var(--color-primary);
+  white-space: nowrap;
+  overflow-wrap: normal;
+  display: inline-block;
+}
+#contribute .container:nth-child(2) a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-light);
 }
 
 /* Styling for the guidelines section */
@@ -190,7 +316,7 @@ select {
   background-color: var(--color-background);
   padding: 20px;
   border-radius: 10px;
-  margin: 10px 20px 30px 20px;
+  margin: 10px auto 30px;
   box-shadow: 5px 5px 5px var(--color-primary);
 }
 #guidelines .container h3 {
@@ -222,8 +348,8 @@ select {
 
 .link-guidelines {
   display: inline-flex;
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
+  background-color: var(--color-primary-alt);
+  color: var(--color-light);
   padding: 20px 30px;
   margin: 20px 10px;
   border-radius: 8px;
@@ -534,36 +660,6 @@ strong {
 a {
   color: var(--color-anchor);
   text-decoration: none;
-}
-
-#guidelines p:nth-of-type(1),
-#contribute p:nth-of-type(1) {
-  font-size: var(--font-size-h4);
-  font-weight: var(--font-weight-strong);
-}
-
-#files {
-  display: grid;
-  place-content: center;
-  margin: 5vh auto;
-  text-align: center;
-}
-#files h3 {
-  height: 0;
-  opacity: 0;
-}
-#files .container {
-  display: inline-block;
-  padding: 5vmin;
-  outline: 4px dashed var(--color-secondary);
-  background-color: var(--color-background);
-  text-align: center;
-}
-#files .container a:not(:last-child) {
-  margin: 0.5rem;
-}
-#files .container a:not(:last-child):not(.link-codepen) {
-  font-size: clamp(1.5rem, 4vw, 2rem);
 }
 
 .skip-link {
