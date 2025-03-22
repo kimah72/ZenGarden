@@ -1,20 +1,4 @@
-/* Don't change/ done by Julie */ 
-// mixin for grid
-@mixin grid-layout($columns, $rows: auto, $gap: 0) {
-  display: grid;
-  grid-template-columns: repeat($columns, 1fr);
-  grid-template-rows: $rows;
-  gap: $gap;
-}
 
-//mixin for flex
-@mixin flex-layout($direction: row, $wrap: nowrap, $justify: center, $align: center) {
-  display: flex;
-  flex-direction: $direction;
-  flex-wrap: $wrap;
-  justify-content: $justify;
-  align-items: $align;
-}
 
 #main {
   margin-top: 20px;
@@ -77,25 +61,7 @@
       }
     }
 
-//     #about .container:nth-child(2) {
-//   background: none;
-//   border: none;
-//   box-shadow: none;
 
-//   ul {
-//     @include flex-layout(row, wrap, space-around); //mixin from #about
-//     list-style: none;
-
-//     li {
-//       background-color: var(--color-background);
-//       padding: 10px;
-//       margin: 5px;
-//       border-radius: 8px;
-//       box-shadow: 5px 5px 5px 0px var(--color-primary-alt);
-//     }
-//   }
-
-// }
 
     blockquote {
       border: 2px solid var(--color-primary-alt);

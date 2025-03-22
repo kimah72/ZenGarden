@@ -8,17 +8,15 @@
 @import "global_css/mixins";
 
 // These are all the different sections of the main page
-@import "block_related_styles/logomark";
+
 @import "block_related_styles/about";
 @import "block_related_styles/contribute";
 @import "block_related_styles/guidelines";
-@import "block_related_styles/profile";
 @import "block_related_styles/styles";
 
 // These are all the different sections
 @import "composition_related_styles/header";
 @import "composition_related_styles/nav";
-@import "composition_related_styles/layout";
 @import "composition_related_styles/footer";
 
 // These are all the utility styles

@@ -55,20 +55,20 @@
 
 .link-guidelines {
     display: inline-flex;
-    background-color: var(--color-primary-alt);
-    color: var(--color-light);
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
     padding: 20px 30px;
     margin: 20px 10px;
     border-radius: 8px;
-    box-shadow: 5px 5px 5px var(--color-background);
+    box-shadow: 5px 5px 5px var(--color-primary);
     font-size: clamp(1em, 1.5em, 1.8em);
     transform: translate(0, 0);
     transition: 180ms all ease-in-out;
 
     &:hover,
     &:focus {
-        background-color: var(--color-background);
-        color: var(--color-primary);
+        background-color: var(--color-primary);
+        color: var(--color-secondary);
         box-shadow: 5px 5px 5px var(--color-primary);
         transform: translate(-0.20em, -0.20em);
     }
