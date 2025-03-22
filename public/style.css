@@ -211,8 +211,9 @@ select {
   }
 }
 #contribute .container {
-  max-width: 95%;
+  max-width: 100%;
   display: grid;
+  margin: 0 20px;
 }
 @media (max-width: 768px) {
   #contribute .container {
@@ -317,8 +318,10 @@ select {
 }
 
 #files {
+  display: flex;
   grid-column: 1/-1;
   margin-bottom: 20px;
+  justify-content: center;
 }
 #files .container {
   display: flex;
@@ -326,6 +329,8 @@ select {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  max-width: 100%;
+  margin: 10px;
 }
 #files .container h3 {
   width: 100%;
@@ -360,7 +365,7 @@ select {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
+  margin: 20px;
 }
 @media (max-width: 768px) {
   #guidelines {

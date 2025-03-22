@@ -12,8 +12,10 @@
     }
 
   .container {
-    max-width: 95%;
+    max-width: 100%;
     display: grid;
+    margin: 0 20px;
+   
     
     @media (max-width: 768px) {
       @include flex-layout(column);
@@ -128,12 +130,15 @@
 
 // Source Files CSS --footer .files
 #files {
-
+  display: flex;
   grid-column: 1 / -1;
   margin-bottom: 20px;
+  justify-content: center;
   
   .container {
     @include flex-layout(row, wrap, space-between);
+    max-width: 100%;
+    margin: 10px;
 
     h3 {
       width: 100%;
