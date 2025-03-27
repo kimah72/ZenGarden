@@ -10,7 +10,6 @@ header {
   overflow: hidden;
   text-align: center;
 
-  // Hero background using cairn3.jpg
   &:before {
     content: '';
     position: absolute;
@@ -27,18 +26,6 @@ header {
     filter: brightness(.5) saturate(1.5) hue-rotate(deg);
   }
 
-  // Overlay for better text contrast
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    z-index: 1;
-  }
-
   .container {
     position: relative;
     z-index: 2;
@@ -52,7 +39,7 @@ header {
   }
 
   h1 {
-    font-size: 5rem;
+    font-size: 6rem;
     color: $color-primary;
     text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
     margin-bottom: 1rem;
@@ -64,56 +51,58 @@ header {
     font-size: 2rem;
     color: $color-primary;
     max-width: 30ch;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
     text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
   p {
     color: $color-primary;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
     padding: 0.3rem 0.8rem;
-  }
-
-  .link-github {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: $color-contrast;
-    color: $color-secondary;
-    text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-    animation: popIn 1s ease-out;
-    animation-fill-mode: forwards;
-
-    &:hover {
-      background-color: darken($color-primary-alt, 10%);
-    }
+    background-color: rgba(255, 255, 255, 0.4);
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.link-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: $color-contrast;
+  color: $color-secondary;
+  text-decoration: none;
+  border: 3px solid $color-primary-alt;
+  border-radius: 10px;
+  background: linear-gradient(90deg, $color-contrast, lighten($color-contrast, 20%));
+  transition: all 0.4s ease;
+  position: absolute;
+  bottom: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: $font-weight-strong;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.25em;
+    fill: $color-primary-alt;
+    transition: fill 0.4s ease;
   }
 
-  @keyframes popIn {
-    from {
-      transform: scale(0.9);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1);
-      opacity: 1;
+  &:hover {
+    background: linear-gradient(90deg, $color-primary-alt, lighten($color-primary-alt, 10%));
+    border-color: $color-primary;
+    color: $color-contrast;
+    svg {
+      fill: $color-secondary;
     }
   }
+}
 
   @media (max-width: 768px) {
     --hero-height: 50vh;

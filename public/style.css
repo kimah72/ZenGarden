@@ -455,15 +455,6 @@ header:before {
   opacity: 0.7;
   filter: brightness(0.5) saturate(1.5) hue-rotate(deg);
 }
-header:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
 header .container {
   position: relative;
   z-index: 2;
@@ -475,7 +466,7 @@ header .container {
   padding: 2rem;
 }
 header h1 {
-  font-size: 5rem;
+  font-size: 6rem;
   color: #1A4645;
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
   margin-bottom: 1rem;
@@ -486,50 +477,53 @@ header h2 {
   font-size: 2rem;
   color: #1A4645;
   max-width: 30ch;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
   text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 header p {
   color: #1A4645;
   margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
   padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 header .link-github {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
   background-color: #333F44;
   color: #E5EDE8;
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-  animation: popIn 1s ease-out;
-  animation-fill-mode: forwards;
+  border: 3px solid #75908B;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #333F44, #5f757e);
+  transition: all 0.4s ease;
+  position: absolute;
+  bottom: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-weight: 500;
+}
+header .link-github svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.25em;
+  fill: #75908B;
+  transition: fill 0.4s ease;
 }
 header .link-github:hover {
-  background-color: #5e7470;
+  background: linear-gradient(90deg, #75908B, #91a7a3);
+  border-color: #1A4645;
+  color: #333F44;
 }
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes popIn {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+header .link-github:hover svg {
+  fill: #E5EDE8;
 }
 @media (max-width: 768px) {
   header {
