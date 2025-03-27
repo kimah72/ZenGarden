@@ -4,13 +4,9 @@
     @include flex-layout(column, nowrap);
     text-align: center;
     margin: 20px;
-    
-
-    @media (max-width: 768px) { 
-         margin-top: 0;
-      }
 
     .container {
+        margin: 0 20px;
 
         h2 {
             background-color: var(--color-background);
@@ -52,12 +48,21 @@
             margin-bottom: 40px;
         }        
     } 
+    @media (max-width: $breakpoint-mobile) {
+        margin: 0;
+    
+        .container {
+            p {
+                margin: 0 5px;
+            }
+        }
+    }
 }
 
 .link-guidelines {
     display: inline-flex;
-    background-color: var(--color-secondary);
-    color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: white;
     padding: 20px 30px;
     margin: 20px 10px;
     border-radius: 8px;
@@ -68,8 +73,8 @@
 
     &:hover,
     &:focus {
-        background-color: var(--color-primary);
-        color: var(--color-secondary);
+        background-color: var(--color-background);
+        color: var(--color-primary);
         box-shadow: 5px 5px 5px var(--color-primary);
         transform: translate(-0.20em, -0.20em);
     }

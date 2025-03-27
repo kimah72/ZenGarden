@@ -75,10 +75,13 @@ select {
     scroll-behavior: auto !important;
   }
 }
-#main {
+#about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 0;
   margin-top: 20px;
 }
-
 #about .container:nth-child(2) {
   background: none;
   border: none;
@@ -98,21 +101,6 @@ select {
   margin: 5px;
   border-radius: 8px;
   box-shadow: 5px 5px 5px 0px var(--color-primary-alt);
-}
-
-#about {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-  gap: 0;
-}
-@media (max-width: 768px) {
-  #about {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: auto;
-    gap: 0;
-  }
 }
 #about .container {
   display: flex;
@@ -168,13 +156,12 @@ select {
   color: var(--color-secondary);
   background-color: var(--color-primary);
 }
-
-#about .container:nth-child(2) {
+#about .container .container:nth-child(2) {
   background: none;
   border: none;
   box-shadow: none;
 }
-#about .container:nth-child(2) ul {
+#about .container .container:nth-child(2) ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -182,16 +169,28 @@ select {
   align-items: center;
   list-style: none;
 }
-#about .container:nth-child(2) ul li {
+#about .container .container:nth-child(2) ul li {
   background-color: var(--color-background);
   padding: 10px;
   margin: 5px;
   border-radius: 8px;
   box-shadow: 5px 5px 5px 0px var(--color-primary-alt);
 }
+@media (max-width: 768px) {
+  #about {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    gap: 0;
+  }
+  #about .container {
+    margin: 10px;
+  }
+  #about .container p {
+    text-align: center;
+  }
+}
 
-/* Styling for the contribute section */
-/* Don't change/ done by Julie */
 #contribute {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -200,30 +199,10 @@ select {
   margin-top: 20px;
   color: var(--color-primary);
 }
-@media (max-width: 768px) {
-  #contribute {
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-  }
-}
 #contribute .container {
   max-width: 100%;
   display: grid;
   margin: 0 20px;
-}
-@media (max-width: 768px) {
-  #contribute .container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-  }
 }
 #contribute .container:first-child {
   grid-column: 1/-1;
@@ -249,12 +228,6 @@ select {
   text-align: center;
   font-size: clamp(1.2em, 1.5em, 1.8em);
 }
-@media (max-width: 768px) {
-  #contribute .container p {
-    width: 100%;
-    margin-top: 10px;
-  }
-}
 #contribute .container p:nth-child(2) {
   font-weight: bold;
   font-size: clamp(1.8em, 2em, 2.2em);
@@ -264,14 +237,6 @@ select {
   align-content: flex-start;
   margin-bottom: -10px;
   margin-top: 30px;
-}
-@media (max-width: 768px) {
-  #contribute .container p:nth-child(2) {
-    width: 100%;
-    padding: 10px;
-    align-self: center;
-    margin-top: 10px;
-  }
 }
 #contribute .container p a {
   background-color: var(--color-secondary);
@@ -315,6 +280,37 @@ select {
 #contribute .container:nth-child(2) a:hover {
   background-color: var(--color-primary);
   color: var(--color-light);
+}
+@media (max-width: 768px) {
+  #contribute {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #contribute .container {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #contribute .container p {
+    width: 100%;
+    margin-top: 10px;
+  }
+  #contribute .container p:nth-child(2) {
+    width: 100%;
+    padding: 10px;
+    align-self: center;
+    margin-top: 10px;
+  }
+  #contribute .container:nth-child(2) {
+    margin-top: -45px;
+  }
 }
 
 #files {
@@ -368,10 +364,8 @@ select {
   text-align: center;
   margin: 20px;
 }
-@media (max-width: 768px) {
-  #guidelines {
-    margin-top: 0;
-  }
+#guidelines .container {
+  margin: 0 20px;
 }
 #guidelines .container h2 {
   background-color: var(--color-background);
@@ -406,11 +400,19 @@ select {
   font-size: clamp(1.2rem, 1.5rem, 1.8rem);
   margin-bottom: 40px;
 }
+@media (max-width: 768px) {
+  #guidelines {
+    margin: 0;
+  }
+  #guidelines .container p {
+    margin: 0 5px;
+  }
+}
 
 .link-guidelines {
   display: inline-flex;
-  background-color: var(--color-secondary);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: white;
   padding: 20px 30px;
   margin: 20px 10px;
   border-radius: 8px;
@@ -420,8 +422,8 @@ select {
   transition: 180ms all ease-in-out;
 }
 .link-guidelines:hover, .link-guidelines:focus {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
+  background-color: var(--color-background);
+  color: var(--color-primary);
   box-shadow: 5px 5px 5px var(--color-primary);
   transform: translate(-0.2em, -0.2em);
 }
