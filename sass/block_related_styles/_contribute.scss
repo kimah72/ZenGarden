@@ -1,26 +1,14 @@
-/* Styling for the contribute section */
-/* Don't change/ done by Julie */ 
+//Styling for the contribute section
+// Don't change/ done by Julie 
 #contribute {
   @include grid-layout(2);
   margin-top: 20px;
   color: var(--color-primary);
 
-  @media (max-width: 768px) { 
-       margin-top: 0;
-       @include flex-layout(column);
-
-    }
-
   .container {
     max-width: 100%;
     display: grid;
     margin: 0 20px;
-   
-    
-    @media (max-width: 768px) {
-      @include flex-layout(column);
-      margin-top: 10px;
-    }
     
     &:first-child {
       grid-column: 1 / -1;
@@ -50,10 +38,7 @@
           text-align: center;  
           font-size: clamp(1.2em, 1.5em, 1.8em);  
           
-          @media (max-width: 768px) {
-            width: 100%;
-            margin-top: 10px;
-          }
+       
 
           &:nth-child(2) {
             font-weight: bold;
@@ -64,13 +49,6 @@
             align-content: flex-start;
             margin-bottom: -10px;
             margin-top: 30px;  
-            
-            @media (max-width: 768px) {
-              width: 100%;
-              padding: 10px;
-              align-self: center;
-              margin-top: 10px;
-            }
         
           }
 
@@ -125,10 +103,39 @@
         }
        
       }   
-  } 
+  }
+  @media (max-width: $breakpoint-mobile) { 
+    margin-top: 0;
+    @include flex-layout(column);
+
+    .container {
+        margin-top: 0;
+        @include flex-layout(column);
+
+      p {
+          width: 100%;
+          margin-top: 10px;
+
+          &:nth-child(2) {
+            width: 100%;
+            padding: 10px;
+            align-self: center;
+            margin-top: 10px;
+
+          }
+        }
+     &:nth-child(2) {
+      margin-top: -45px;
+     }
+ 
+     }
+    
+
+ } 
 }
 
 // Source Files CSS --footer .files
+//styled by Kimberly
 #files {
   display: flex;
   grid-column: 1 / -1;
