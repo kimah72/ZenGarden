@@ -191,6 +191,12 @@ select {
   }
 }
 
+/* Styling for the contribute section */
+/* Don't change/ done by Julie */
+/* I also contributed to this page. 
+Specifically the Source Files by adding a pattern
+and making it more responsive in smaller views. 
+- Kim Miner 3/28/25 */
 #contribute {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -199,10 +205,30 @@ select {
   margin-top: 20px;
   color: var(--color-primary);
 }
+@media (max-width: 768px) {
+  #contribute {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
 #contribute .container {
   max-width: 100%;
   display: grid;
   margin: 0 20px;
+}
+@media (max-width: 768px) {
+  #contribute .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
 }
 #contribute .container:first-child {
   grid-column: 1/-1;
@@ -228,6 +254,12 @@ select {
   text-align: center;
   font-size: clamp(1.2em, 1.5em, 1.8em);
 }
+@media (max-width: 768px) {
+  #contribute .container p {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
 #contribute .container p:nth-child(2) {
   font-weight: bold;
   font-size: clamp(1.8em, 2em, 2.2em);
@@ -237,6 +269,14 @@ select {
   align-content: flex-start;
   margin-bottom: -10px;
   margin-top: 30px;
+}
+@media (max-width: 768px) {
+  #contribute .container p:nth-child(2) {
+    width: 100%;
+    padding: 10px;
+    align-self: center;
+    margin-top: 10px;
+  }
 }
 #contribute .container p a {
   background-color: var(--color-secondary);
@@ -281,37 +321,6 @@ select {
   background-color: var(--color-primary);
   color: var(--color-light);
 }
-@media (max-width: 768px) {
-  #contribute {
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-  }
-  #contribute .container {
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-  }
-  #contribute .container p {
-    width: 100%;
-    margin-top: 10px;
-  }
-  #contribute .container p:nth-child(2) {
-    width: 100%;
-    padding: 10px;
-    align-self: center;
-    margin-top: 10px;
-  }
-  #contribute .container:nth-child(2) {
-    margin-top: -45px;
-  }
-}
 
 #files {
   display: flex;
@@ -334,15 +343,21 @@ select {
   font-size: clamp(2em, 2.5em, 3em);
 }
 #files .container a {
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+  background-repeat: repeat;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   background-color: var(--color-primary);
   color: var(--color-light);
-  padding: 25px 80px;
+  padding: 25px 50px;
   border-radius: 10px;
   box-shadow: 8px 8px 8px var(--color-background);
   text-align: center;
-  width: auto;
   font-size: clamp(1.2em, 1.5em, 1.8em);
-  margin: 20px 0;
+  margin: 20px auto;
   transform: translate(0, 0);
   transition: 180ms all ease-in-out;
 }
@@ -351,6 +366,27 @@ select {
   background-color: var(--color-secondary);
   box-shadow: 8px 8px 8px var(--color-primary);
   transform: translate(-0.2em, -0.2em);
+}
+@media (max-width: 768px) {
+  #files .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background-size: 15px 15px;
+    margin: 10px 0;
+    box-shadow: 4px 4px 4px var(--color-background);
+    width: 90%;
+    max-width: 300px;
+  }
+}
+@media (max-width: 480px) {
+  #files .container {
+    padding: 10px 15px;
+    background-size: 10px 10px;
+    box-shadow: 2px 2px 2px var(--color-background);
+  }
 }
 
 /* Styling for the guidelines section */
@@ -504,7 +540,7 @@ header .link-github {
   background: linear-gradient(90deg, #333F44, #5f757e);
   transition: all 0.4s ease;
   position: absolute;
-  bottom: -4rem;
+  bottom: -2.5rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -562,8 +598,9 @@ nav li {
 nav a {
   display: block;
   text-align: center;
+  font-size: clamp(0.8em, 2vw, 1em);
   font-weight: bolder;
-  padding: 10px;
+  padding: 5px;
   background-color: rgba(229, 237, 232, 0.85);
   text-decoration: none;
   color: #1A4645;
