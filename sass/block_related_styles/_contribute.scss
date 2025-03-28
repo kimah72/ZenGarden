@@ -1,14 +1,26 @@
-//Styling for the contribute section
-// Don't change/ done by Julie 
+/* Styling for the contribute section */
+/* Don't change/ done by Julie */ 
 #contribute {
   @include grid-layout(2);
   margin-top: 20px;
   color: var(--color-primary);
 
+  @media (max-width: 768px) { 
+       margin-top: 0;
+       @include flex-layout(column);
+
+    }
+
   .container {
     max-width: 100%;
     display: grid;
     margin: 0 20px;
+   
+    
+    @media (max-width: 768px) {
+      @include flex-layout(column);
+      margin-top: 10px;
+    }
     
     &:first-child {
       grid-column: 1 / -1;
@@ -38,7 +50,10 @@
           text-align: center;  
           font-size: clamp(1.2em, 1.5em, 1.8em);  
           
-       
+          @media (max-width: 768px) {
+            width: 100%;
+            margin-top: 10px;
+          }
 
           &:nth-child(2) {
             font-weight: bold;
@@ -49,6 +64,13 @@
             align-content: flex-start;
             margin-bottom: -10px;
             margin-top: 30px;  
+            
+            @media (max-width: 768px) {
+              width: 100%;
+              padding: 10px;
+              align-self: center;
+              margin-top: 10px;
+            }
         
           }
 
@@ -103,39 +125,10 @@
         }
        
       }   
-  }
-  @media (max-width: $breakpoint-mobile) { 
-    margin-top: 0;
-    @include flex-layout(column);
-
-    .container {
-        margin-top: 0;
-        @include flex-layout(column);
-
-      p {
-          width: 100%;
-          margin-top: 10px;
-
-          &:nth-child(2) {
-            width: 100%;
-            padding: 10px;
-            align-self: center;
-            margin-top: 10px;
-
-          }
-        }
-     &:nth-child(2) {
-      margin-top: -45px;
-     }
- 
-     }
-    
-
- } 
+  } 
 }
 
 // Source Files CSS --footer .files
-//styled by Kimberly
 #files {
   display: flex;
   grid-column: 1 / -1;
@@ -154,16 +147,21 @@
     }
 
     a {
-    
+      background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 75%, transparent 75%, transparent);
+      background-size: 20px 20px;
+      background-repeat: repeat;
+      color: #333;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
       background-color: var(--color-primary);
       color: var(--color-light);
-      padding: 25px 80px;
+      padding: 25px 50px;
       border-radius: 10px;
       box-shadow: 8px 8px 8px var(--color-background);
       text-align: center;
-      width: auto;
       font-size: clamp(1.2em, 1.5em, 1.8em);
-      margin: 20px 0;
+      margin: 20px auto;
       transform: translate(0, 0);
       transition: 180ms all ease-in-out;
 
@@ -174,10 +172,27 @@
         transform: translate(-0.20em, -0.20em);
       }
     }
+    
+    // Responsive adjustments for smaller screens
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background-size: 15px 15px;
+    margin: 10px 0;
+    box-shadow: 4px 4px 4px var(--color-background);
+    width: 90%;
+    max-width: 300px;
+  }
 
+  // Further adjustments for very small screens (e.g., mobile)
+  @media (max-width: 480px) {
+    padding: 10px 15px;
+    background-size: 10px 10px;
+    box-shadow: 2px 2px 2px var(--color-background);
+  }
 
   }
 }
-
-
-
