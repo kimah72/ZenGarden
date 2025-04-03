@@ -1,1 +1,197 @@
-// This is a new block to deal with the aside.
+// aside.scss
+// Define the breakpoint at the top of aside.scss
+$breakpoint-mobile: 768px;
+
+// Import necessary mixins
+@import "../global_css/mixins";
+
+// Styling for the profile section (.profile)
+.profile {
+  width: 100%; // Span across the page
+  @include flex-layout(column, nowrap); // Center content vertically
+  text-align: center;
+  margin: 20px 0;
+  padding: 0;
+
+  .container {
+    @include container-constraints; // Constrain width (90% max-width, centered)
+    margin: 0 auto;
+    padding: 30px;
+
+    h2#profile-title {
+      width: 100%; // Span across the page  
+      background-color: var(--color-background); // Match guidelines h2 background
+      padding: 20px;
+      border-radius: 10px;
+      margin: 10px auto;
+      box-shadow: 5px 5px 5px var(--color-primary);
+      font-size: var(--font-size-h2);
+      color: var(--color-primary);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 60px 20px 60px;
+      @include flex-layout(row, wrap, space-between, center); // Place li items side by side
+      gap: 20px; // Add spacing between items
+
+      li {
+        flex: 1; // Allow items to grow equally
+        min-width: 200px; // Ensure items don’t get too narrow
+        margin: 0; // Remove vertical margin since we're using gap
+        font-size: var(--font-size-text);
+        color: var(--color-primary);
+
+        span:first-child {
+          font-weight: bold; // Match the bolded style of guidelines
+        }
+
+        a {
+          background-color: var(--color-secondary);
+          padding: 5px 15px;
+          margin: 0 5px;
+          border-radius: 5px;
+          white-space: nowrap;
+          display: inline-block;
+          box-shadow: 2.5px 2.5px 2.5px var(--color-primary-alt);
+
+          &:hover {
+            color: var(--color-secondary);
+            background-color: var(--color-primary);
+          }
+        }
+      }
+    }
+
+    > a { // The "View Stylesheet" link
+      display: inline-flex;
+      background-color: var(--color-primary);
+      color: white;
+      padding: 20px 30px;
+      margin: 20px 10px;
+      border-radius: 8px;
+      box-shadow: 5px 5px 5px var(--color-primary);
+      font-size: clamp(1em, 1.5em, 1.8em);
+      transform: translate(0, 0);
+      transition: 180ms all ease-in-out;
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-background);
+        color: var(--color-primary);
+        box-shadow: 5px 5px 5px var(--color-primary);
+        transform: translate(-0.20em, -0.20em);
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    margin: 10px 0;
+
+    .container {
+      padding: 20px;
+
+      ul {
+        @include flex-layout(column, nowrap, center, center); // Stack items vertically on mobile
+        margin: 0 20px 10px 20px;
+        gap: 10px; // Reduce gap for mobile
+
+        li {
+          min-width: unset; // Allow items to take full width on mobile
+        }
+      }
+    }
+  }
+}
+
+// Styling for the features section (#styles)
+#styles {
+  width: 100%; // Span across the page
+  @include flex-layout(column, nowrap);
+  text-align: center;
+  margin: 20px 0;
+  padding: 0;
+
+  .container {
+    @include container-constraints; // Constrain width (90% max-width, centered)
+    margin: 0 auto;
+
+    h2 {
+      width: 100%; // Span across the page
+      background-color: var(--color-background);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 10px auto;
+      box-shadow: 5px 5px 5px var(--color-primary);
+      font-size: var(--font-size-h2);
+      color: var(--color-primary);
+    }
+
+    h3 {
+      display: none;
+    }
+
+    ul.features {
+      list-style: none;
+      padding: 0;
+      margin: 0 60px 20px 60px;
+
+      li {
+        margin: 10px 0;
+        font-size: var(--font-size-text);
+        color: var(--color-primary);
+
+        span {
+          display: block;
+
+          a {
+            background-color: var(--color-secondary);
+            padding: 5px 15px;
+            margin: 0 5px;
+            border-radius: 5px;
+            white-space: nowrap;
+            display: inline-block;
+            box-shadow: 2.5px 2.5px 2.5px var(--color-primary-alt);
+
+            &:hover {
+              color: var(--color-secondary);
+              background-color: var(--color-primary);
+            }
+          }
+        }
+      }
+    }
+
+    .link-allstyles {
+      display: inline-flex;
+      background-color: var(--color-primary);
+      color: white;
+      padding: 20px 30px;
+      margin: 20px 10px;
+      border-radius: 8px;
+      box-shadow: 5px 5px 5px var(--color-primary);
+      font-size: clamp(1em, 1.5em, 1.8em);
+      transform: translate(0, 0);
+      transition: 180ms all ease-in-out;
+
+      &:hover,
+      &:focus {
+        background-color: var(--color-background);
+        color: var(--color-primary);
+        box-shadow: 5px 5px 5px var(--color-primary);
+        transform: translate(-0.20em, -0.20em);
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    margin: 10px 0;
+
+    .container {
+      ul.features {
+        margin: 0 20px 10px 20px;
+      }
+    }
+  }
+}

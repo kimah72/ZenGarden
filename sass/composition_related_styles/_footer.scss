@@ -1,3 +1,170 @@
-// composition_related_styles/_footer.scss
+// footer.scss
 
+// Import necessary mixins
+@import "../global_css/mixins";
 
+// Styling for the page footer (.page-footer)
+.page-footer {
+  width: 100%; // Span across the page
+  @include flex-layout(column, nowrap, center, center);
+  text-align: center;
+  background-color: var(--color-background); // Restore green background (#B1CDBD)
+  color: var(--color-light);
+  padding: 16px 0; // Match Vuetify's py-4 (4 units = 16px)
+  margin: 0;
+
+  .container {
+    @include container-constraints; // Constrain width (90% max-width, centered)
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; // For positioning pseudo-elements
+
+    // Add divider before the first paragraph
+    > p:first-child::before {
+      content: "";
+      display: block;
+      width: 50px; // Match Vuetify's width="50"
+      height: 2px; // Match Vuetify's thickness="2"
+      background-color: var(--color-secondary);
+      opacity: 0.6;
+      margin: 0 auto 16px auto; // Space above the paragraph
+    }
+
+    // Add divider between paragraphs
+    > p:not(:last-child)::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 2px;
+      background-color: var(--color-secondary);
+      opacity: 0.6;
+      margin: 16px auto 0 auto; // Space below the paragraph
+    }
+
+    // Style paragraphs
+    p {
+      margin: 0 60px 20px 60px;
+      padding: 0 40px;
+      font-size: var(--font-size-text);
+      color: var(--color-light);
+      opacity: 0.6; // Match Vuetify's opacity-60
+
+      a {
+        background-color: var(--color-secondary);
+        padding: 5px 15px;
+        margin: 0 5px;
+        border-radius: 5px;
+        white-space: nowrap;
+        display: inline-block;
+        box-shadow: 2.5px 2.5px 2.5px var(--color-primary-alt);
+        color: var(--color-primary);
+
+        &:hover {
+          color: var(--color-secondary);
+          background-color: var(--color-primary);
+        }
+      }
+    }
+
+    // Style the last paragraph as the copyright notice
+    > p:last-child {
+      margin-top: 20px;
+      font-size: var(--font-size-text);
+      opacity: 1; // Full opacity for copyright
+      position: relative;
+
+      // Add divider before the copyright
+      &::before {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 2px;
+        background-color: var(--color-secondary);
+        opacity: 0.6;
+        margin: 0 auto 16px auto;
+      }
+    }
+
+    // Social media links
+    ul {
+      @include flex-layout(row, wrap, space-between, center); // Match .profile layout
+      gap: 20px; // Match .profile spacing
+      list-style: none;
+      padding: 0;
+      margin: 0 60px 20px 60px;
+
+      li {
+        flex: 1; // Allow items to grow equally
+        min-width: 80px; // Adjust for larger icons
+        text-align: center;
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 80px; // Larger size
+          height: 80px; // Larger size
+          border-radius: 50%; // Circular shape
+          background-color: var(--color-secondary);
+          color: var(--color-primary);
+          text-indent: -9999px; // Hide the text
+          position: relative;
+          transition: background-color 0.3s ease, color 0.3s ease;
+          background-size: 48px 48px; // Size of the background image
+          background-position: center;
+          background-repeat: no-repeat;
+
+          &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+          }
+
+          // Twitter (X) icon
+          &.link-twittercontact {
+            background-image: url("/images/twitter.png");
+          }
+
+          // GitHub icon
+          &.link-github {
+            svg {
+              display: none; // Hide the inline SVG
+            }
+            background-image: url("/images/github.png");
+          }
+
+          // RSS icon
+          &.link-rss {
+            background-image: url("/images/rss.png");
+          }
+
+          // Email/Support icon
+          &.link-support {
+            background-image: url("/images/email.png");
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 12px 0;
+
+    .container {
+      padding: 15px;
+
+      ul {
+        @include flex-layout(column, nowrap, center, center); // Stack items vertically on mobile
+        gap: 10px; // Reduce gap for mobile
+
+        li {
+          min-width: unset; // Allow items to take full width on mobile
+        }
+      }
+
+      p {
+        margin: 0 20px 10px 20px;
+        padding: 0 20px;
+      }
+    }
+  }
+}
