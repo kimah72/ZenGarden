@@ -1,8 +1,29 @@
+$hamburger-breakpoint: 768px;
+
 nav {
   background-color: $color-primary-alt;
   border-top: 2px solid $color-contrast;
   padding-bottom: 15px;
-  position: static;
+  position: relative;
+  min-height: 50px;
+
+  &::before {
+    content: 'Menu ▼';
+    display: none;
+    width: auto;
+    height: 30px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); 
+    top: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    color: $color-contrast;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 5px;
+  }
 
   ul {
     list-style: none;
@@ -12,6 +33,17 @@ nav {
     max-width: 1000px;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: $hamburger-breakpoint) {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+      top: 20px;
+      left: 0;
+      background-color: $color-primary-alt;
+      padding: 20px 0;
+    }
   }
 
   li {
@@ -19,13 +51,20 @@ nav {
     margin: 0 5px;
     position: relative;
     top: 0;
+
+    @media (max-width: $hamburger-breakpoint) {
+      flex: none;
+      margin: 5px 0;
+      width: 100%;
+    }
   }
 
   a {
     display: block;
     text-align: center;
+    font-size: clamp(0.8em, 2vw, 1em);
     font-weight: bolder;
-    padding: 10px;
+    padding: 5px;
     background-color: rgba($color-secondary, 0.85);
     text-decoration: none;
     color: $color-primary;
@@ -40,6 +79,37 @@ nav {
       color: $color-secondary;
       transform: translateY(2px);
       box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: $hamburger-breakpoint) {
+      border-radius: 10px;
+      margin: 0 20px;
+      border: 1px solid rgba($color-primary-alt, 0.7);
+    }
+  }
+
+  @media (max-width: $hamburger-breakpoint) {
+    &::before {
+      display: block;
+      background: transparent;
+      &::after,
+      &::before {
+        content: none;
+      }
+    }
+
+    &:hover {
+      ul {
+        display: flex;
+        position: relative;
+        z-index: 999;
+      }
+      &::before {
+        content: 'Menu ▲';
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }

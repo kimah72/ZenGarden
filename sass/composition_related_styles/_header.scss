@@ -34,8 +34,7 @@ header {
     justify-content: center;
     align-items: center;
     min-height: var(--hero-height, 60vh);
-    padding: 2rem; // Space for fuzzy border
-
+    padding: 2rem;
   }
 
   h1 {
@@ -67,46 +66,68 @@ header {
     background-color: rgba(255, 255, 255, 0.4);
   }
 
-.link-github {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background-color: $color-contrast;
-  color: $color-secondary;
-  text-decoration: none;
-  border: 3px solid $color-primary-alt;
-  border-radius: 10px;
-  background: linear-gradient(90deg, $color-contrast, lighten($color-contrast, 20%));
-  transition: all 0.4s ease;
-  position: absolute;
-  bottom: -4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  font-weight: $font-weight-strong;
+  .link-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(90deg, lighten($color-primary-alt, 40%), lighten($color-contrast, 40%));
+    color: $color-primary;
+    text-decoration: none;
+    border: 2px solid rgba($color-primary, 0.6);
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
 
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.25em;
-    fill: $color-primary-alt;
-    transition: fill 0.4s ease;
-  }
-
-  &:hover {
-    background: linear-gradient(90deg, $color-primary-alt, lighten($color-primary-alt, 10%));
-    border-color: $color-primary;
-    color: $color-contrast;
     svg {
-      fill: $color-secondary;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.25em;
+      fill: $color-primary-alt;
+      transition: fill 0.4s ease;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.5);
+      border-color: rgba($color-primary, 0.7);
+      color: $color-primary;
+      svg {
+        fill: $color-secondary;
+      }
+    }
+
+    @media (max-width: 650px) {
+      padding: 0.5rem 1rem;
+      font-weight: 400;
+      border: 1px solid rgba($color-primary, 0.4);
+      font-size: 0.9rem;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.5);
+        border-color: rgba($color-primary, 0.7);
+        color: $color-primary;
+        svg {
+          fill: $color-secondary;
+        }
+      }
     }
   }
-}
 
   @media (max-width: 768px) {
     --hero-height: 50vh;
-    --hero-padding: 5vh 1rem;
+    --hero-padding: 6vh 1rem;
 
     h1 {
       font-size: 2.5rem;
